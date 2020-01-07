@@ -1,0 +1,64 @@
+intents:
+- accept
+- goodbye
+- thanh_toan_bankplus
+- thanh_toan_nap_the
+- thanh_toan_qua_cua_hang
+- nang_han_muc
+- nang_han_muc_truc_tiep
+- khong_hieu
+- out_of_scope
+- ket_qua_nang_han_muc
+- test
+entities:
+- gia_nang
+slots:
+  gia_nang:
+    type: text
+templates:
+  utter_accept:
+  - text: "Cước tháng này của Quý khách tạm tính đến ngày dd/mm là X đồng, chỉ còn\
+      \ Y đồng là sẽ vượt quá hạn mức sử dụng Quý khách đã đăng ký. Để tránh việc\
+      \ số thuê bao của Quý khách bị chặn liên lạc do vượt quá hạn mức, Quý khách\
+      \ vui lòng thực hiện theo 1 trong các cách sau:\n 1: Thanh toán trước số tiền\
+      \ đã sử dụng qua bankplus.\n 2: Qua nạp thẻ hoặc thanh toán tại cửa hàng.\n\
+      \ 3: Nâng hạn mức sử dụng bằng cách soạn tin TD (cách) hạn mức mới gửi 195 với\
+      \ hạn mức mới là bội số của 1 triệu\n 4: Em hỗ trợ nâng hạn mức cho anh luôn\
+      \ trong cuộc gọi này"
+  utter_goodbye:
+  - text: Cảm ơn Quý khách. Khi cần hỗ trợ, vui lòng
+  utter_thanh_toan_bankplus:
+  - text: Với thuê bao sử dụng smartphone, vui lòng vào appstore (với điện thoại Iphone)
+      hoặc CH Play (với điện thoại Android) để tải ứng dụng bankplus. Sau khi tải
+      thành công, Quý khách đăng nhập và chọn Dịch vụ viễn thông – Điện thoại thẻ
+      cào và sau đó nạp tiền theo hướng dẫn.
+  utter_thanh_toan_nap_the:
+  - text: 'Quý khách mua thẻ cào theo mệnh giá cần nạp, sau đó thực hiện gọi 199 để
+      nạp tiền theo hướng dẫn, hoặc bấm *199* mã số thẻ và kết thúc bằng phím # để
+      nạp tiền.'
+  utter_thanh_toan_qua_cua_hang:
+  - text: 'Quý khách đến cửa hàng gần nhất của Viettel và thanh toán cước. '
+  utter_nang_han_muc:
+  - text: Quý khách nâng hạn mức bằng cách soạn TD (cách) hạn mức sử dụng mới và gửi
+      195 với hạn mức sử dụng mới là bội số của  1 triệu.
+  utter_nang_han_muc_truc_tiep:
+  - text: Em xin xác nhận lại thông tin anh đồng ý nâng hạn mức của thuê bao xxx lên
+      {gia_nang} đồng
+  utter_ket_qua_nang_han_muc:
+  - text: Thuê bao xxx của anh đã nâng hạn mức lên {gia_nang} thành công
+  utter_khong_hieu:
+  - text: chỗ nào bạn không hiểu
+  utter_boss_khong_hieu:
+  - text: Để hỗ trợ Quý khách tốt hơn, xin phép cúp máy để có nhân viên gọi lại hỗ
+      trợ Quý khách. Cảm ơn!.
+actions:
+- utter_accept
+- utter_nang_han_muc
+- utter_thanh_toan_nap_the
+- utter_thanh_toan_qua_cua_hang
+- utter_khong_hieu
+- utter_nang_han_muc_truc_tiep
+- utter_thanh_toan_bankplus
+- utter_goodbye
+- utter_boss_khong_hieu
+- utter_ket_qua_nang_han_muc

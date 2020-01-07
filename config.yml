@@ -1,0 +1,20 @@
+language: vi
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: CRFEntityExtractor
+- name: EntitySynonymMapper
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+- name: EmbeddingIntentClassifier
+policies:
+- name: MappingPolicy
+- name: KerasPolicy
+- name: MemoizationPolicy
+- name: FallbackPolicy
+  nlu_threshold: 0.3
+  core_threshold: 0.3
+  fallback_action_name: utter_boss_khong_hieu
